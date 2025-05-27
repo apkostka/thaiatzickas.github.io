@@ -1,0 +1,7 @@
+{% for link in site.social %}
+<a href="{{ link.url }}" target="_blank" class="pl-4">
+<i
+  class="bx bxl-{{ link.title }} text-2xl text-{{ include.color }} hover:text-{{ include.hover }}"
+  ></i>
+</a>
+{% endfor %}

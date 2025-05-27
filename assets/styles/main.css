@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+
+html {
+  @apply font-body antialiased;
+}
+
+
+@layer base {
+  /*
+  @font-face {
+    font-family: 'lydian';
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: url(/assets/fonts/lydian__-webfont.woff2) format('woff2'),
+         url(/assets/fonts/lydian__-webfont.woff) format('woff');
+  }
+  */
+}
+
+.font-header {
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.7);
+}
+
+.footer-standout {
+  color: theme('colors.yellow');
+  font-weight: bold;
+}
+
+.hero-bg {
+  @apply bg-gradient-to-b to-rose-from from-darkblue-to bg-fixed bg-center bg-cover bg-no-repeat;
+  background-image: url('/assets/img/backgrounds/background.png.webp'), url('/assets/img/backgrounds/background.png.jpg');
+}
+
+@tailwind utilities;

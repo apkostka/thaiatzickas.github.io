@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<div id="page-content" class="container max-w-screen-lg mx-auto items-center bg-white p-10">
+
+  {% include hero.html page=page height=30 %}
+
+  {% if page.content %}
+  <article class="prose lg:prose-xl mb-20">
+
+    {{content}}
+
+  </article>
+  {% endif %}
+
+  {% for project in site.categories[page.category] %}
+      {% include project-listing.html page=project %}
+  {% endfor %}
+
+  {% if page.img-dir %}
+  <hr class="block h-1 w-full border-black my-10" />
+  <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4 mb-10">
+      {% assign image_files = site.static_files | where: "list", true %}
+      {% for image in image_files %}
+        {% if image.path contains page.img-dir %}
+          <a 
+          href="{{ image.path | relative_url }}"
+          class="w-full bg-cover bg-center bg-no-repeat">
+            <img 
+              src="{{ image.path | relative_url }}"
+              class="w-full h-full object-cover"
+              alt="{{ image.name }}" />
+          </a>
+        {% endif %}
+      {% endfor %}
+  </div>
+  {% endif %}
+
+</div>

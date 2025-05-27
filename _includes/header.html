@@ -1,0 +1,60 @@
+<div class="relative w-full z-50 top-0 py-3 sm:py-5 ">
+  <div class="container flex flex-col justify-between py-6 sm:flex-row">
+    <div class="w-full md:w-48 lg:w-64">
+      <a href="/">
+        <img src="/assets/img/logos/logo3.png" class="w-full max-w-64 mx-auto" alt="HamHamWest Logo" />
+      </a>
+    </div>
+    <div class="hidden lg:block pt-20">
+      <ul class="flex items-center content-center font-header text-yellow uppercase text-2xl md:text-3xl xl:text-4xl">
+        {% assign sorted_pages = site.html_pages | sort: 'order' %}
+        {% for page in sorted_pages %}
+        {% if page.title != "Home" %}
+        <li class="group ml-10 hover:text-rose">
+          <a
+            href="{{ page.url }}"
+            class="cursor-pointer"
+            alt="{{page.title}}"
+            >{{page.title}}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="lg:hidden absolute right-5 top-5 md:right-10 md:top-1/4">
+        <button @click="mobileMenu = true" aria-label="Menu">
+        <i class="bx bx-menu text-4xl text-yellow"></i>
+        </button>
+    </div>
+  </div>
+</div>
+<div
+  class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
+  :class="{ 'opacity-100 pointer-events-auto': mobileMenu }"
+>
+<div
+   class="absolute right-0 min-h-screen py-4 px-8 shadow"
+   >
+   <button
+      class="absolute top-0 right-0 mt-8 mr-6"
+      aria-label="Close Menu"
+      @click="mobileMenu = false"
+      >
+   <img src="/assets/img/icons/icon-close.svg" class="h-10 w-auto text-yellow" alt="Close Icon" />
+   </button>
+   <ul class="mt-20 flex flex-col font-header text-yellow text-right shadow-sm text-3xl xl:text-4xl">
+    {% assign sorted_pages = site.html_pages | sort: 'order' %}
+    {% for page in sorted_pages %}
+    {% if page.title != "Home" %}
+    <li class="group leading-loose hover:text-rose">
+      <a
+        href="{{ page.url }}"
+        class="cursor-pointer uppercase"
+        alt="{{page.title}}"
+        >{{page.title}}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+   </ul>
+</div>
+</div>
