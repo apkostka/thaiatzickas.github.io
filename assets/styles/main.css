@@ -27,6 +27,14 @@ html {
     #page-content {
       @apply container max-w-screen-2xl items-center p-0 lg:pl-96;
       @apply text-sm;
+
+      .post {
+        @apply relative block;
+
+        .post-title {
+          @apply absolute top-0 left-0 w-full text-white z-50 p-5 text-5xl;
+        }
+      }
     }
 
     .content-section {
@@ -58,7 +66,7 @@ html {
 
       h3 {
         @apply text-2xl;
-        @apply font-semibold;
+        @apply font-medium;
         @apply mb-4;
       }
     }

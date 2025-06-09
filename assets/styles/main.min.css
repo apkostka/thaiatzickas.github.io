@@ -727,6 +727,24 @@ select {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+
+      body #page-content .post {
+  position: relative;
+  display: block;
+}
+
+        body #page-content .post .post-title {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+  width: 100%;
+  padding: 1.25rem;
+  font-size: 3rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
       body .content-section.text-box {
   padding: 4rem;
 }
@@ -774,7 +792,7 @@ select {
       body .content-section h3 {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 1rem;
 }
 

@@ -4,8 +4,9 @@ layout: default
 
 <div id="page-content">
   {% for post in site.posts %}
-  <article>
-    {{ post.content }}
-  </article>
+  <a href="/{{ post.slug }}" class="post">
+    <img src="{{ post.hero-image }}" alt="{{ post.title }}" class="post-image">
+    <span class="post-title">{{ post.title }}</span>
+  </a>
   {% endfor %}
 </div>
