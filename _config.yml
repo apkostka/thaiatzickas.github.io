@@ -1,0 +1,29 @@
+url: 'https://thaiatzickas.com'
+domain: thaiatzickas
+baseurl: ''
+title: 'Thaia Tzickas'
+email: apkostka@gmail.com
+description: "Thaia Tzickas graphic designer in Portland, Oregon"
+keywords: "artist illustrator designer graphic freelance art"
+meta_author: Kostka Andrew
+permalink: /:title
+
+defaults:
+  - scope:
+      path: "assets/img/projects"
+    values:
+      list: true
+
+plugins:
+  - jekyll-postcss
+
+postcss:
+  cache: false
+
+exclude:
+  - package.json
+  - pnpm-lock.yaml
+  - postcss.config.js
+  - tailwind.config.js
+  - thaiatzickas.com.code-workspace
+  - atom-v2.0.0

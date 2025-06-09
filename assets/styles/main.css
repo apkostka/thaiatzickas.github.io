@@ -5,32 +5,51 @@ html {
   @apply font-body antialiased;
 }
 
-
 @layer base {
-  /*
-  @font-face {
-    font-family: 'lydian';
+  body {
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
     font-style: normal;
-    font-weight: normal;
-    font-display: swap;
-    src: url(/assets/fonts/lydian__-webfont.woff2) format('woff2'),
-         url(/assets/fonts/lydian__-webfont.woff) format('woff');
+
+    .sidebar {
+      @apply block w-full;
+      @apply lg:fixed lg:top-0 lg:left-0 z-50 flex lg:h-screen lg:w-64 overflow-hidden flex-col bg-white;
+      @apply p-10;
+
+      hr {
+        @apply my-4;
+      }
+    }
+
+    .content-section {
+      @apply grid grid-cols-1 lg:grid-cols-2;
+
+      .horizontal-split {
+        @apply h-full;
+        @apply gap-0;
+        @apply relative;
+        @apply overflow-hidden;
+
+        > * {
+          @apply w-full;
+          @apply h-1/2;
+          @apply block;
+        }
+      }
+
+      .half-text {
+        @apply p-20;
+      }
+
+      h3 {
+        @apply text-2xl;
+        @apply font-bold;
+        @apply mb-4;
+        @apply uppercase;
+      }
+    }
   }
-  */
-}
-
-.font-header {
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.7);
-}
-
-.footer-standout {
-  color: theme('colors.yellow');
-  font-weight: bold;
-}
-
-.hero-bg {
-  @apply bg-gradient-to-b to-rose-from from-darkblue-to bg-fixed bg-center bg-cover bg-no-repeat;
-  background-image: url('/assets/img/backgrounds/background.png.webp'), url('/assets/img/backgrounds/background.png.jpg');
 }
 
 @tailwind utilities;

@@ -8,15 +8,13 @@ title: Home
 
   <body
     :class="{ 'overflow-hidden max-h-screen': mobileMenu }"
-    class="relative bg-gradient-to-b to-rose-from from-darkblue-to bg-center bg-auto"
+    class="relative"
     x-data="{ mobileMenu: false }"
   >
     <div id="main" class="relative">
-      <div class="relative bg-cover bg-center bg-no-repeat">
-        {% include header.html %}
-        {{ content }}
-        {% include footer.html %}
-      </div>
+      {% include sidebar.html %}
+      {{ content }}
+      {% include footer.html %}
     </div>
   </body>
 </html>
