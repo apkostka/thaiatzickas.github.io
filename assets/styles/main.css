@@ -19,6 +19,13 @@ html {
       @apply p-10;
       @apply text-sm;
 
+      h3 {
+        @apply text-2xl;
+        @apply font-medium;
+        @apply mb-4;
+        @apply lowercase;
+      }
+
       hr {
         @apply my-4;
       }
@@ -30,6 +37,10 @@ html {
 
       .post {
         @apply relative block;
+
+        img {
+          @apply hover:opacity-90 transition-opacity duration-300;
+        }
 
         .post-title {
           @apply absolute top-0 left-0 w-full text-white z-50 p-5 text-5xl;

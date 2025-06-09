@@ -653,6 +653,14 @@ select {
   line-height: 1.25rem;
 }
 
+      body .sidebar h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-transform: lowercase;
+}
+
       body .sidebar hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -731,6 +739,19 @@ select {
       body #page-content .post {
   position: relative;
   display: block;
+}
+
+        body #page-content .post img {
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+        body #page-content .post img:hover {
+  opacity: 0.9;
 }
 
         body #page-content .post .post-title {
