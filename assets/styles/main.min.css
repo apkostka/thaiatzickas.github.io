@@ -604,7 +604,29 @@ select {
 
     body .sidebar {
   display: block;
+}
+
+    @media (min-width: 1024px) {
+
+  body .sidebar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+  }
+}
+
+    body .sidebar {
   width: 100%;
+}
+
+    @media (min-width: 1024px) {
+
+  body .sidebar {
+    width: 24rem;
+  }
+}
+
+    body .sidebar {
   z-index: 50;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -621,16 +643,14 @@ select {
     @media (min-width: 1024px) {
 
   body .sidebar {
-    position: fixed;
-    top: 0px;
-    left: 0px;
     height: 100vh;
-    width: 16rem;
   }
 }
 
     body .sidebar {
   padding: 2.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
       body .sidebar hr {
@@ -638,14 +658,87 @@ select {
   margin-bottom: 1rem;
 }
 
-    body .content-section {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+    body #page-content {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+    @media (min-width: 375px) {
+
+  body #page-content {
+    max-width: 375px;
+  }
+}
+
+    @media (min-width: 640px) {
+
+  body #page-content {
+    max-width: 640px;
+  }
+}
+
+    @media (min-width: 768px) {
+
+  body #page-content {
+    max-width: 768px;
+  }
 }
 
     @media (min-width: 1024px) {
 
-  body .content-section {
+  body #page-content {
+    max-width: 1024px;
+  }
+}
+
+    @media (min-width: 1280px) {
+
+  body #page-content {
+    max-width: 1280px;
+  }
+}
+
+    @media (min-width: 1536px) {
+
+  body #page-content {
+    max-width: 1536px;
+  }
+}
+
+    body #page-content {
+  max-width: 1536px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px;
+}
+
+    @media (min-width: 1024px) {
+
+  body #page-content {
+    padding-left: 24rem;
+  }
+}
+
+    body #page-content {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+      body .content-section.text-box {
+  padding: 4rem;
+}
+
+      body .content-section .horizontal-split {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+      @media (min-width: 1024px) {
+
+  body .content-section .horizontal-split {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -657,22 +750,32 @@ select {
   overflow: hidden;
 }
 
-        body .content-section .horizontal-split > * {
+        body .content-section .horizontal-split >* {
   width: 100%;
-  height: 50%;
   display: block;
 }
 
+        body .content-section .horizontal-split >img {
+  width: 100%;
+}
+
       body .content-section .half-text {
-  padding: 5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+      @media (min-width: 1024px) {
+
+  body .content-section .half-text {
+    padding-right: 2.5rem;
+  }
 }
 
       body .content-section h3 {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1rem;
-  text-transform: uppercase;
 }
 
 *, ::before, ::after {
@@ -824,49 +927,6 @@ select {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-@media (min-width: 375px) {
-
-  .container {
-    max-width: 375px;
-  }
-}
-@media (min-width: 640px) {
-
-  .container {
-    max-width: 640px;
-  }
-}
-@media (min-width: 768px) {
-
-  .container {
-    max-width: 768px;
-  }
-}
-@media (min-width: 1024px) {
-
-  .container {
-    max-width: 1024px;
-  }
-}
-@media (min-width: 1280px) {
-
-  .container {
-    max-width: 1280px;
-  }
-}
-@media (min-width: 1536px) {
-
-  .container {
-    max-width: 1536px;
-  }
-}
 
 html {
   font-family: Lora, sans-serif;
@@ -882,30 +942,8 @@ html {
   max-height: 100vh;
 }
 
-.max-w-screen-xl {
-  max-width: 1280px;
-}
-
-.max-w-3xl {
-  max-width: 48rem;
-}
-
-.max-w-screen-2xl {
-  max-width: 1536px;
-}
-
-.items-center {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .overflow-hidden {
   overflow: hidden;
-}
-
-.p-0 {
-  padding: 0px;
 }
 
 .pl-4 {
@@ -915,11 +953,4 @@ html {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-@media (min-width: 1024px) {
-
-  .lg\:pl-64 {
-    padding-left: 16rem;
-  }
 }

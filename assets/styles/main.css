@@ -13,40 +13,53 @@ html {
     font-style: normal;
 
     .sidebar {
-      @apply block w-full;
-      @apply lg:fixed lg:top-0 lg:left-0 z-50 flex lg:h-screen lg:w-64 overflow-hidden flex-col bg-white;
+      @apply block lg:fixed lg:top-0 lg:left-0;
+      @apply w-full lg:w-96;
+      @apply z-50 flex lg:h-screen overflow-hidden flex-col bg-white;
       @apply p-10;
+      @apply text-sm;
 
       hr {
         @apply my-4;
       }
     }
 
+    #page-content {
+      @apply container max-w-screen-2xl items-center p-0 lg:pl-96;
+      @apply text-sm;
+    }
+
     .content-section {
-      @apply grid grid-cols-1 lg:grid-cols-2;
+      &.text-box {
+        @apply p-16;
+      }
 
       .horizontal-split {
+        @apply grid grid-cols-1 lg:grid-cols-2;
         @apply h-full;
         @apply gap-0;
         @apply relative;
         @apply overflow-hidden;
 
-        > * {
+        >* {
           @apply w-full;
-          @apply h-1/2;
           @apply block;
+        }
+
+        >img {
+          @apply w-full;
         }
       }
 
       .half-text {
-        @apply p-20;
+        @apply my-2;
+        @apply lg:pr-10;
       }
 
       h3 {
         @apply text-2xl;
-        @apply font-bold;
+        @apply font-semibold;
         @apply mb-4;
-        @apply uppercase;
       }
     }
   }
