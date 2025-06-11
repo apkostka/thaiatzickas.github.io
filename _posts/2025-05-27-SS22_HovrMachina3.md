@@ -33,7 +33,6 @@ hero-image: "assets/img/projects/SS22_HovrMachina3/1.jpg"
   </div>
 </div>
 <div class="content-section text-box">
-  <h3>Lorem Ipsum</h3>
   <div class="horizontal-split">
     <div class="half-text">
       <p>

@@ -12,6 +12,11 @@ html {
     font-weight: 400;
     font-style: normal;
 
+    p {
+      color: rgb(20 20 20);
+      @apply text-sm/5;
+    }
+
     .sidebar {
       @apply block lg:fixed lg:top-0 lg:left-0;
       @apply w-full lg:w-96;
@@ -19,20 +24,23 @@ html {
       @apply p-10;
       @apply text-sm;
 
-      h3 {
-        @apply text-2xl;
-        @apply font-medium;
-        @apply mb-4;
-        @apply lowercase;
-      }
-
       hr {
         @apply my-4;
+      }
+
+      a {
+        @apply hover:underline;
+        @apply transition-colors duration-300;
+
+        &.home_link {
+          @apply font-semibold;
+          @apply lowercase;
+        }
       }
     }
 
     #page-content {
-      @apply container max-w-screen-2xl items-center p-0 lg:pl-96;
+      @apply container max-w-screen-2xl items-end mx-0 max-w-none p-0 lg:pl-96;
       @apply text-sm;
 
       .post {
@@ -72,7 +80,11 @@ html {
 
       .half-text {
         @apply my-2;
-        @apply lg:pr-10;
+        @apply lg:pr-5;
+
+        &:nth-child(even) {
+          @apply lg:pr-0 lg:pl-5;
+        }
       }
 
       h3 {

@@ -602,6 +602,12 @@ select {
     font-style: normal;
   }
 
+    body p {
+      color: rgb(20 20 20);
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
     body .sidebar {
   display: block;
 }
@@ -653,17 +659,27 @@ select {
   line-height: 1.25rem;
 }
 
-      body .sidebar h3 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  text-transform: lowercase;
-}
-
       body .sidebar hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+      body .sidebar a:hover {
+  text-decoration-line: underline;
+}
+
+      body .sidebar a {
+  -webkit-transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+        body .sidebar a.home_link {
+  font-weight: 600;
+  text-transform: lowercase;
 }
 
     body #page-content {
@@ -717,10 +733,13 @@ select {
 }
 
     body #page-content {
+  margin-left: 0px;
+  margin-right: 0px;
   max-width: 1536px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  max-width: none;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   padding: 0px;
 }
 
@@ -806,7 +825,12 @@ select {
       @media (min-width: 1024px) {
 
   body .content-section .half-text {
-    padding-right: 2.5rem;
+    padding-right: 1.25rem;
+  }
+
+  body .content-section .half-text:nth-child(even) {
+    padding-right: 0px;
+    padding-left: 1.25rem;
   }
 }
 
