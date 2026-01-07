@@ -2,11 +2,18 @@
 layout: default
 ---
 
-<div id="page-content">
+<section class="hero-statement">
+  <p>I'm passionate about understanding how different design disciplines intersect and create meaningful connections.</p>
+</section>
+
+<section class="project-grid">
   {% for post in site.posts %}
-  <a href="/{{ post.slug }}" class="post">
-    <img src="{{ post.hero-image }}" alt="{{ post.title }}" class="post-image">
-    <span class="post-title">{{ post.title }}</span>
-  </a>
+    {% assign mod = forloop.index | modulo: 2 %}
+    <div class="project-row">
+      <a href="/{{ post.slug }}" class="project-card {% if mod == 0 %}align-right{% else %}align-left{% endif %}">
+        <img src="/{{ post.hero-image }}" alt="{{ post.title }}">
+        <span class="project-title">{{ post.title }}</span>
+      </a>
+    </div>
   {% endfor %}
-</div>
+</section>
