@@ -1,20 +1,14 @@
 ---
-layout: default
-title: Home
 ---
 <!DOCTYPE html>
 <html lang="en">
   {% include head.html %}
 
-  <body
-    :class="{ 'overflow-hidden max-h-screen': mobileMenu }"
-    class="relative"
-    x-data="{ mobileMenu: false }"
-  >
-    <div id="main" class="relative">
-      {% include sidebar.html %}
+  <body class="bg-white text-black">
+    {% include header.html %}
+    <main id="main">
       {{ content }}
-      {% include footer.html %}
-    </div>
+    </main>
+    {% include footer.html %}
   </body>
 </html>
