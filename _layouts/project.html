@@ -1,6 +1,39 @@
 ---
 layout: default
 ---
-<div id="page-content">
-    {{content}}
-</div>
+
+<section class="project-hero">
+  <img src="/{{ page.hero-image }}" alt="{{ page.title }}">
+  <h1 class="project-hero-title">{{ page.title }}</h1>
+</section>
+
+<article class="project-content">
+  {{ content }}
+</article>
+
+{% assign posts = site.posts %}
+{% assign post_count = posts | size %}
+{% for post in posts %}
+  {% if post.slug == page.slug %}
+    {% assign current_index = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+
+{% assign prev_index = current_index | minus: 1 %}
+{% assign next_index = current_index | plus: 1 %}
+
+<nav class="project-nav">
+  {% if prev_index >= 0 %}
+    {% assign prev_post = posts[prev_index] %}
+    <a href="/{{ prev_post.slug }}">&larr; {{ prev_post.title }}</a>
+  {% else %}
+    <span></span>
+  {% endif %}
+
+  {% if next_index < post_count %}
+    {% assign next_post = posts[next_index] %}
+    <a href="/{{ next_post.slug }}">{{ next_post.title }} &rarr;</a>
+  {% else %}
+    <span></span>
+  {% endif %}
+</nav>
