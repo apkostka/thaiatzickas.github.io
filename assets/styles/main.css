@@ -11,75 +11,212 @@ html {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+  }
+}
 
-    .sidebar {
-      @apply block lg:fixed lg:top-0 lg:left-0;
-      @apply w-full lg:w-96;
-      @apply z-50 flex lg:h-screen overflow-hidden flex-col bg-white;
-      @apply p-10;
-      @apply text-sm;
+@layer components {
+  /* Header */
+  .site-header {
+    @apply fixed top-0 left-0 right-0 z-50;
+    @apply flex justify-between items-center;
+    @apply px-8 py-6;
+    @apply bg-white;
+  }
 
-      h3 {
-        @apply text-2xl;
-        @apply font-medium;
-        @apply mb-4;
-        @apply lowercase;
-      }
+  .site-logo {
+    @apply text-sm font-medium tracking-wide;
+  }
 
-      hr {
-        @apply my-4;
+  .site-nav {
+    @apply flex gap-8;
+  }
+
+  .site-nav a {
+    @apply text-sm text-grey-20 hover:text-black transition-colors;
+  }
+
+  /* Footer */
+  .site-footer {
+    @apply px-8 py-16 mt-24;
+    @apply border-t border-grey-70;
+  }
+
+  .footer-content {
+    @apply flex justify-between max-w-screen-xl mx-auto;
+  }
+
+  .footer-section h4 {
+    @apply text-sm text-grey-20 mb-4;
+  }
+
+  .footer-section a {
+    @apply text-sm hover:text-grey-20 transition-colors;
+  }
+
+  .social-links {
+    @apply flex flex-col gap-2;
+  }
+
+  .footer-bottom {
+    @apply mt-16 text-center;
+    @apply text-sm font-medium tracking-wide;
+  }
+
+  /* Main content area */
+  #main {
+    @apply pt-24; /* Space for fixed header */
+  }
+
+  /* Home page */
+  .hero-statement {
+    @apply px-8 py-16 max-w-4xl;
+  }
+
+  .hero-statement p {
+    @apply text-3xl lg:text-4xl font-normal leading-tight;
+  }
+
+  .project-grid {
+    @apply px-8;
+  }
+
+  .project-row {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8;
+  }
+
+  .project-row.reverse {
+    @apply lg:flex-row-reverse;
+  }
+
+  .project-card {
+    @apply relative block;
+  }
+
+  .project-card img {
+    @apply w-full h-auto;
+    @apply hover:opacity-90 transition-opacity duration-300;
+  }
+
+  .project-card .project-title {
+    @apply mt-3 text-sm;
+  }
+
+  .project-card.align-right {
+    @apply lg:col-start-2;
+  }
+
+  .project-card.align-left {
+    @apply lg:col-start-1;
+  }
+
+  /* About page */
+  .about-section {
+    @apply grid grid-cols-1 lg:grid-cols-12 gap-8;
+    @apply px-8 py-16;
+    @apply border-b border-grey-70;
+  }
+
+  .about-label {
+    @apply lg:col-span-3;
+    @apply text-sm text-grey-20;
+  }
+
+  .about-content {
+    @apply lg:col-span-9;
+  }
+
+  .about-bio {
+    @apply text-2xl lg:text-3xl leading-relaxed max-w-3xl;
+  }
+
+  .about-image {
+    @apply px-8 py-16;
+  }
+
+  .about-image img {
+    @apply w-full h-auto;
+  }
+
+  .testimonial-section {
+    @apply grid grid-cols-1 lg:grid-cols-12 gap-8;
+    @apply px-8 py-16;
+  }
+
+  .testimonial-content {
+    @apply lg:col-span-9;
+  }
+
+  .testimonial-quote {
+    @apply text-xl lg:text-2xl leading-relaxed mb-8;
+  }
+
+  .testimonial-attribution {
+    @apply flex items-center gap-4;
+  }
+
+  .testimonial-avatar {
+    @apply w-12 h-12 rounded-full object-cover;
+  }
+
+  .testimonial-name {
+    @apply text-sm font-medium;
+  }
+
+  .testimonial-title {
+    @apply text-sm text-grey-20;
+  }
+
+  /* Project page */
+  .project-hero {
+    @apply relative;
+  }
+
+  .project-hero img {
+    @apply w-full h-auto;
+  }
+
+  .project-hero-title {
+    @apply absolute bottom-0 left-0 right-0;
+    @apply p-8;
+    @apply text-white text-4xl lg:text-6xl font-medium;
+    @apply bg-gradient-to-t from-black/50 to-transparent;
+  }
+
+  .project-nav {
+    @apply flex justify-between;
+    @apply px-8 py-8;
+    @apply border-t border-grey-70;
+  }
+
+  .project-nav a {
+    @apply text-sm text-grey-20 hover:text-black transition-colors;
+  }
+
+  /* Content sections (keep existing patterns) */
+  .content-section {
+    img, video {
+      @apply w-full h-auto;
+    }
+
+    &.text-box {
+      @apply px-8 py-16;
+    }
+
+    .horizontal-split {
+      @apply grid grid-cols-1 lg:grid-cols-2;
+      @apply gap-0;
+
+      > * {
+        @apply w-full block;
       }
     }
 
-    #page-content {
-      @apply container max-w-screen-2xl items-center p-0 lg:pl-96;
-      @apply text-sm;
-
-      .post {
-        @apply relative block;
-
-        img {
-          @apply hover:opacity-90 transition-opacity duration-300;
-        }
-
-        .post-title {
-          @apply absolute top-0 left-0 w-full text-white z-50 p-5 text-5xl;
-        }
-      }
+    .half-text {
+      @apply my-2 lg:pr-10;
     }
 
-    .content-section {
-      &.text-box {
-        @apply p-16;
-      }
-
-      .horizontal-split {
-        @apply grid grid-cols-1 lg:grid-cols-2;
-        @apply h-full;
-        @apply gap-0;
-        @apply relative;
-        @apply overflow-hidden;
-
-        >* {
-          @apply w-full;
-          @apply block;
-        }
-
-        >img {
-          @apply w-full;
-        }
-      }
-
-      .half-text {
-        @apply my-2;
-        @apply lg:pr-10;
-      }
-
-      h3 {
-        @apply text-2xl;
-        @apply font-medium;
-        @apply mb-4;
-      }
+    h3 {
+      @apply text-2xl font-medium mb-4;
     }
   }
 }
