@@ -5,9 +5,6 @@ slug: "fw22-winterized"
 hero-image: "assets/img/projects/FW22_Winterized/1.jpg"
 ---
 
-<div class="content-section">
-    <img src="assets/img/projects/FW22_Winterized/1.jpg" />
-</div>
 <div class="content-section text-box">
   <h3>{{ page.title }}</h3>
   <div class="horizontal-split">

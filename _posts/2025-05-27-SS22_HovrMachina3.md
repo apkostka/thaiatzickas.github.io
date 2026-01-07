@@ -5,9 +5,6 @@ slug: "ss22-hovrmachina3"
 hero-image: "assets/img/projects/SS22_HovrMachina3/1.jpg"
 ---
 
-<div class="content-section">
-    <img src="assets/img/projects/SS22_HovrMachina3/1.jpg" />
-</div>
 <div class="content-section text-box">
   <h3>{{ page.title }}</h3>
   <div class="horizontal-split">
