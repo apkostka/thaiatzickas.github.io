@@ -12,7 +12,10 @@ layout: default
     <div class="project-row">
       <a href="/{{ post.slug }}" class="project-card {% if mod == 0 %}align-right{% else %}align-left{% endif %}">
         <img src="/{{ post.hero-image }}" alt="{{ post.title }}">
-        <span class="project-title">{{ post.title }}</span>
+        <div class="project-label">
+          <span class="project-season">{{ post.season }}</span>
+          <span class="project-name">{{ post.name }}</span>
+        </div>
       </a>
     </div>
   {% endfor %}

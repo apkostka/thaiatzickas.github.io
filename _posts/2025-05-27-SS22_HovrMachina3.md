@@ -1,6 +1,8 @@
 ---
 layout: project
 title: "SS22 HOVR Machina 3"
+season: "SS22"
+name: "HOVR Machina 3"
 slug: "ss22-hovrmachina3"
 hero-image: "assets/img/projects/SS22_HovrMachina3/1.jpg"
 ---

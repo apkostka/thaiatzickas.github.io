@@ -1,6 +1,8 @@
 ---
 layout: project
 title: "SS23 Slipspeed"
+season: "SS23"
+name: "Slipspeed"
 slug: "ss23-slipspeed"
 hero-image: "assets/img/projects/SS23_Slipspeed/1.jpg"
 ---

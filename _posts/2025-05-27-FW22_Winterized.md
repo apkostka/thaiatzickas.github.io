@@ -1,6 +1,8 @@
 ---
 layout: project
 title: "FW22 Winterized"
+season: "FW22"
+name: "Winterized"
 slug: "fw22-winterized"
 hero-image: "assets/img/projects/FW22_Winterized/1.jpg"
 ---

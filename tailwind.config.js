@@ -12,8 +12,9 @@ module.exports = {
   safelist: ["active"],
   theme: {
     fontFamily: {
-      header: ["lydian", "sans-serif"],
-      body: ["Lora", "sans-serif"],
+      sans: ["Inter", "sans-serif"],
+      serif: ['"Source Serif 4"', "serif"],
+      geist: ["Geist", "sans-serif"],
     },
 
     screens: {
